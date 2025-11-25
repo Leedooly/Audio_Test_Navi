@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<title>Navi 음성 샘플 청취 </title>
+<title>Navi 음색 선정</title>
 <style>
   body {
     font-family: "Noto Sans KR", sans-serif;
@@ -55,32 +55,47 @@
     display: none;
   }
 
+  /* 좌우 2열 그리드 */
   .voice-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
     width: 80%;
     margin: auto;
   }
   .voice-card {
     background: #fff;
     border: 1px solid #ccc;
-    padding: 15px;
+    padding:  4px 6px;  
     border-radius: 8px;
     box-shadow: 1px 1px 6px rgba(0,0,0,0.05);
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 6px 12px;   
+    height: auto;   
+    margin: 0;  
   }
   .voice-card p {
-    margin-bottom: 10px;
+    margin: 0;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
     color: #333;
+    min-width: 20px;
   }
   audio.voice {
-    width: 100%;
+    flex-grow: 1;
     outline: none;
-    margin-bottom: 8px;
+
+    /* 재생바 너비와 높이 조절 */
+    width: 200px !important;
+    height: 16px !important;
   }
+  .voice-card div {
+    font-size: 13px; 
+    min-width: 70px;
+  }
+
   .note {
     text-align: center;
     color: #555;
@@ -128,22 +143,27 @@
   p.upload-info a:hover {
     text-decoration: underline;
   }
+
+  /* 점 3개 메뉴 (오버플로우 버튼) 제거 - 크롬 기반 브라우저 대상 */
+  audio::-webkit-media-controls-overflow-button {
+    display: none !important;
+  }
 </style>
 </head>
 <body>
 
-<h2>Navi 음성 샘플 청취 </h2>
+<h2>Navi 음색 선정</h2>
 
 <div class="content">
   <p>
-    현재 3가지 캐릭터 중 <b>Navi 음성 샘플을 선정</b>하고 있습니다.<br>
-    아래의 <b>23개의 voice sample</b>을 먼저 청취하신 후, 아래 선정 기준에 적합한 voice sample을 선택해주세요.
+    다음은 <b>Navi의 차량용 음색으로 어울릴 것 같은 목소리</b>를 선정하고자 합니다. <br>
+    아래의 23개의 voice sample을 들어보시고, 가장 잘 어울리는 voice sample을 선택해주세요.
   </p>
 
   <p>
-    <b>📌 선정 기준</b><br>
-    1. 간결하고 기능적인 정보를 빠르고 명확하게 전달하는 안내의 톤<br>
-    2. 전달력이 뛰어난 명료한 발음
+    <b>📌 참고사항 </b><br>
+    1. 간결하고 기능적인 정보를 빠르고 명확하게 전달하는 안내의 톤을 생각해 주세요.<br>
+    2. 전달력이 뛰어난 명료한 발음을 기준으로 하되, 선호하는 음색을 선택해 주세요.
   </p>
 
   <!-- 대본 토글 버튼 -->
@@ -160,122 +180,122 @@
 <div class="voice-grid" id="voiceGrid">
   <div class="voice-card">
     <p>1</p>
-    <audio class="voice" controls src="Navi_F_001.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_001.mp3"></audio>
     <div><input type="checkbox" name="voice" value="1" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>2</p>
-    <audio class="voice" controls src="Navi_F_002.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_002.mp3"></audio>
     <div><input type="checkbox" name="voice" value="2" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>3</p>
-    <audio class="voice" controls src="Navi_F_003.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_003.mp3"></audio>
     <div><input type="checkbox" name="voice" value="3" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>4</p>
-    <audio class="voice" controls src="Navi_F_004.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_004.mp3"></audio>
     <div><input type="checkbox" name="voice" value="4" onchange="limitSelection(this)"> 선택</div>
   </div>
 
   <div class="voice-card">
     <p>5</p>
-    <audio class="voice" controls src="Navi_F_005.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_005.mp3"></audio>
     <div><input type="checkbox" name="voice" value="5" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>6</p>
-    <audio class="voice" controls src="Navi_F_006.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_006.mp3"></audio>
     <div><input type="checkbox" name="voice" value="6" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>7</p>
-    <audio class="voice" controls src="Navi_F_007.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_007.mp3"></audio>
     <div><input type="checkbox" name="voice" value="7" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>8</p>
-    <audio class="voice" controls src="Navi_F_008.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_008.mp3"></audio>
     <div><input type="checkbox" name="voice" value="8" onchange="limitSelection(this)"> 선택</div>
   </div>
 
   <div class="voice-card">
     <p>9</p>
-    <audio class="voice" controls src="Navi_F_009.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_009.mp3"></audio>
     <div><input type="checkbox" name="voice" value="9" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>10</p>
-    <audio class="voice" controls src="Navi_F_010.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_010.mp3"></audio>
     <div><input type="checkbox" name="voice" value="10" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>11</p>
-    <audio class="voice" controls src="Navi_F_011.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_011.mp3"></audio>
     <div><input type="checkbox" name="voice" value="11" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>12</p>
-    <audio class="voice" controls src="Navi_F_012.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_012.mp3"></audio>
     <div><input type="checkbox" name="voice" value="12" onchange="limitSelection(this)"> 선택</div>
   </div>
 
   <div class="voice-card">
     <p>13</p>
-    <audio class="voice" controls src="Navi_F_013.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_013.mp3"></audio>
     <div><input type="checkbox" name="voice" value="13" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>14</p>
-    <audio class="voice" controls src="Navi_F_014.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_014.mp3"></audio>
     <div><input type="checkbox" name="voice" value="14" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>15</p>
-    <audio class="voice" controls src="Navi_F_015.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_015.mp3"></audio>
     <div><input type="checkbox" name="voice" value="15" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>16</p>
-    <audio class="voice" controls src="Navi_F_016.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_016.mp3"></audio>
     <div><input type="checkbox" name="voice" value="16" onchange="limitSelection(this)"> 선택</div>
   </div>
 
   <div class="voice-card">
     <p>17</p>
-    <audio class="voice" controls src="Navi_F_017.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_017.mp3"></audio>
     <div><input type="checkbox" name="voice" value="17" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>18</p>
-    <audio class="voice" controls src="Navi_F_018.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_018.mp3"></audio>
     <div><input type="checkbox" name="voice" value="18" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>19</p>
-    <audio class="voice" controls src="Navi_F_019.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_019.mp3"></audio>
     <div><input type="checkbox" name="voice" value="19" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>20</p>
-    <audio class="voice" controls src="Navi_F_020.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_020.mp3"></audio>
     <div><input type="checkbox" name="voice" value="20" onchange="limitSelection(this)"> 선택</div>
   </div>
 
   <div class="voice-card">
     <p>21</p>
-    <audio class="voice" controls src="Navi_F_021.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_021.mp3"></audio>
     <div><input type="checkbox" name="voice" value="21" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>22</p>
-    <audio class="voice" controls src="Navi_F_022.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_022.mp3"></audio>
     <div><input type="checkbox" name="voice" value="22" onchange="limitSelection(this)"> 선택</div>
   </div>
   <div class="voice-card">
     <p>23</p>
-    <audio class="voice" controls src="Navi_F_023.mp3"></audio>
+    <audio class="voice" controls controlsList="nodownload noplaybackrate" src="Navi_F_023.mp3"></audio>
     <div><input type="checkbox" name="voice" value="23" onchange="limitSelection(this)"> 선택</div>
   </div>
 </div>
@@ -346,5 +366,3 @@ function toggleScript() {
 
 </body>
 </html>
-
-

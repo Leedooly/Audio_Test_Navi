@@ -362,7 +362,17 @@ function toggleScript() {
     btn.textContent = '▶ 대본보기';
   }
 }
+// textarea 엔터 입력 막기
+document.querySelectorAll('.reason-input').forEach(textarea => {
+  textarea.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();  // 엔터 입력 차단
+    }
+  });
+});
+  
 </script>
 
 </body>
 </html>
+
